@@ -1,0 +1,17 @@
+//
+// Created by stoffel on 9/27/18.
+//
+
+#ifndef SIMPLIFIEDJAPANESETRANSLATOR_TRANSITIONFROMSTATE0_H
+#define SIMPLIFIEDJAPANESETRANSLATOR_TRANSITIONFROMSTATE0_H
+
+
+#include "../Transition.h"
+
+class TransitionFromState0 : public Transition
+{
+
+};
+
+
+#endif //SIMPLIFIEDJAPANESETRANSLATOR_TRANSITIONFROMSTATE0_H

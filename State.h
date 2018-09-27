@@ -1,0 +1,15 @@
+//
+// Created by stoffel on 9/27/18.
+//
+
+#ifndef SIMPLIFIEDJAPANESETRANSLATOR_STATE_H
+#define SIMPLIFIEDJAPANESETRANSLATOR_STATE_H
+
+
+class State
+{
+
+};
+
+
+#endif //SIMPLIFIEDJAPANESETRANSLATOR_STATE_H
