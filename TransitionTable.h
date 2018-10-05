@@ -5,25 +5,32 @@
 #ifndef SIMPLIFIEDJAPANESETRANSLATOR_TRANSITIONTABLE_H
 #define SIMPLIFIEDJAPANESETRANSLATOR_TRANSITIONTABLE_H
 
-#include <vector>
-#include <jmorecfg.h>
-#include "Transition.h"
+#include <unordered_map>
+#include <fstream>
+#include <sstream>
+#include <algorithm>
 
-using std::vector;
+#include "Transition.h"
+#include "Transitions.h"
+
+using std::getline;
+
+using std::unordered_map;
 
 class TransitionTable
 {
 private:
-    vector<vector<Transition>> transitionTable;
+    vector<string> & splitByDelimiter(vector<string> & accumulator, string & str, char delimiter);
+    string & clearWhitespace(string & str);
+    int convertStringToInt(string & str);
 
 protected:
-    vector<Transition> & getTransitionsForState(int state);
-
+    unordered_map<int, Transitions> transitionTable;
+    bool populateFromLine(string &line);
 public:
-    Transition & add(Transition & transition, int state);
-    boolean remove(Transition & transition, int state);
-
-    int transition(int currentState, char nextChar);
+    Transitions & add(int source);
+    Transitions & getOrAdd(int source);
+    bool populateByFile(string &absPathToFile);
 };
 
 

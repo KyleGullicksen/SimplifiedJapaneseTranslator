@@ -1,5 +1,9 @@
 #include <iostream>
+#include "TransitionTable.h"
+
 int main()
 {
-    std::cout<<"Hello, World!"<<std::endl;return 0;
+    TransitionTable transitionTable;
+
+    transitionTable.add(5).add("abcd", 5).add("cdef", 6);
 }
