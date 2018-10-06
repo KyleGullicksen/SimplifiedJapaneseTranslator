@@ -26,10 +26,12 @@ private:
 
 protected:
     unordered_map<int, Transitions> transitionTable;
+
     bool populateFromLine(string &line);
 public:
+    TransitionTable() = default;
+    ~TransitionTable();
     Transitions & add(int source);
-    Transitions & getOrAdd(int source);
     bool populateByFile(string &absPathToFile);
 };
 

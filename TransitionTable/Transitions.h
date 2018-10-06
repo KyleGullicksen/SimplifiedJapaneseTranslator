@@ -7,23 +7,23 @@
 
 #include <string>
 #include <vector>
-#include <unordered_set>
 #include <ctype.h>
 
-#include "Transition.h"
 
 using std::string;
 using std::vector;
-using std::unordered_set;
 
 class Transitions
 {
 protected:
-    vector<unordered_set<int>> transitions; //Char (converted to a lowercase char's ASCII code -> valid set of integers (representing dest states)
+    vector<int> transitions; //Char (converted to a lowercase char's ASCII code -> valid set of integers (representing dest states)
     int getIndex(char ch);
 
 public:
-    Transitions & add(int destination, string transitionChars);
+    Transitions();
+    virtual Transitions & add(int destination, string transitionChars);
+    virtual Transitions & add(int destination, char transitionChar);
+    int getTransition(char ch);
 };
 
 

@@ -16,8 +16,7 @@ Transitions &TransitionTable::add(int source)
         this->transitionTable[source] = *(new Transitions());
 
     //Get the source's row
-    Transitions & transitions = this->transitionTable[source];
-    return transitions;
+    return this->transitionTable[source];
 }
 
 
@@ -60,7 +59,7 @@ bool TransitionTable::populateFromLine(string &line)
     string transitionChars = commaSeperatedValues[2];
 
     //Get the row in this table that corresponds to the given source
-    Transitions & sourceRow = this->getOrAdd(source);
+    Transitions & sourceRow = this->add(source);
 
     //Add the dest to the source row
     sourceRow.add(dest, transitionChars);
@@ -106,10 +105,15 @@ int TransitionTable::convertStringToInt(string &str)
     return value;
 }
 
-Transitions &TransitionTable::getOrAdd(int source)
+TransitionTable::~TransitionTable()
 {
-    return add(source);
+//    for(std::pair<int, Transitions> element : this->transitionTable)
+//        delete element.second;
+
+//Gotta delete those transitions objects...
 }
+
+
 
 
 

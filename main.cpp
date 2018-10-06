@@ -1,9 +1,9 @@
 #include <iostream>
-#include "TransitionTable.h"
+#include "TransitionTable/TransitionTable.h"
 
 int main()
 {
     TransitionTable transitionTable;
 
-    transitionTable.add(5).add("abcd", 5).add("cdef", 6);
+    transitionTable.add(5).add(5, "abc");
 }
