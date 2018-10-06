@@ -12,13 +12,16 @@
 using std::string;
 using std::unordered_map;
 
-class Scanner
+class Tokenizer
 {
 protected:
     unordered_map<string, string> reservedWords;
 
 public:
-    Token scan(string & word);
+    Tokenizer() = default;
+    explicit Tokenizer(unordered_map<string, string> reservedWords);
+
+    Token tokenize(string &word);
 };
 
 
